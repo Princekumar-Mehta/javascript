@@ -1,0 +1,11 @@
+import askPassword from "/import_export_1.js";
+
+let user = {
+  name: "John",
+
+  login(result) {
+    alert(this.name + (result ? " logged in" : " failed to log in"));
+  },
+};
+
+askPassword(user.login.bind(user, true), user.login.bind(user, false)); // ?
